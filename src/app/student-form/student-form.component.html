@@ -1,0 +1,30 @@
+<div class="container pt-4">
+  <h1> Student Form</h1>
+  <form [formGroup]="studentForm" (ngSubmit)="saveStudent()" class="pt-3">
+    <div class="form-group">
+      <label for="emailAddress" class="required">Email address</label>
+      <input type="email" class="form-control" id="emailAddress" placeholder="Enter email"
+        formControlName="emailAddress"
+        [ngClass]="{'invalid':  studentForm.dirty && studentForm.get('emailAddress').invalid}">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" placeholder="Enter first name" formControlName="firstName" [ngClass]="{'invalid':  studentForm.dirty && studentForm.get('firstName').invalid}">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Enter last name" formControlName="lastName" [ngClass]="{'invalid':  studentForm.dirty && studentForm.get('lastName').invalid}">
+    </div>
+
+    <div class="form-group">
+      <label for="occupation">Dream Occupation</label>
+      <input type="text" class="form-control" id="occupation" placeholder="Enter occupation"
+        formControlName="occupation"
+        [ngClass]="{'invalid':  studentForm.dirty && studentForm.get('occupation').invalid}">
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+  </form>
+</div>
